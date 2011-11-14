@@ -1,0 +1,11 @@
+server {
+	listen 80 default;
+	server_name  <%= node[:fqdn] %>;
+
+	access_log  <%= node[:nginx][:log_dir] %>/localhost.access.log;
+
+	location / {
+		root   /var/www;
+		autoindex on;
+	}
+}
